@@ -148,7 +148,7 @@
                 </StackPanel>
             </Border>
 
-            
+             
             <Button Content="Pokaż szczegóły podróży"
                     Click="OnShowDetails"
                     Background="#34495e"

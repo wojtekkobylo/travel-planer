@@ -6,4 +6,4 @@
     <ScrollViewer>
         <TextBlock Name="SummaryText" Padding="10" TextWrapping="Wrap" FontSize="14"/>
     </ScrollViewer>
-</Window> 
+</Window>  

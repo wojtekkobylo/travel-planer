@@ -10,4 +10,4 @@ namespace TravelPlanner
             SummaryText.Text = text;
         }
     }
-} //
+} // 

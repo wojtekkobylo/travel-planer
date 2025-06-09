@@ -77,7 +77,7 @@ namespace travelplaner
 
             var transport = PlaneRadio.IsChecked == true ? "Samolot" :
                             CarRadio.IsChecked == true ? "Samochód" :
-                            TrainRadio.IsChecked == true ? "Pociąg" :
+                            TrainRadio.IsChecked == true ? "Pociąg" : 
                             ShipRadio.IsChecked == true ? "Statek" : "Nie wybrano";
 
             var date = TravelCalendar.SelectedDate?.ToString("d") ?? "Brak";
