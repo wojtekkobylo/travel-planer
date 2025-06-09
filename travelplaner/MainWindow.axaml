@@ -48,7 +48,7 @@
                      Foreground="White"
                      Margin="0,0,0,20"/>
 
-            <!-- Dane osobowe -->
+            
             <Border Background="#3498db" 
                     CornerRadius="8" 
                     Padding="20">
@@ -61,7 +61,7 @@
                 </StackPanel>
             </Border>
 
-            <!-- Wybór kraju -->
+            
             <Border Background="#2ecc71" 
                     CornerRadius="8" 
                     Padding="20">
@@ -88,7 +88,7 @@
                 </StackPanel>
             </Border>
 
-            <!-- Atrakcje -->
+            
             <Border Background="#e74c3c" 
                     CornerRadius="8" 
                     Padding="20">
@@ -105,7 +105,7 @@
                 </StackPanel>
             </Border>
 
-            <!-- Transport -->
+            
             <Border Background="#9b59b6" 
                     CornerRadius="8" 
                     Padding="20">
@@ -120,7 +120,7 @@
                 </StackPanel>
             </Border>
 
-            <!-- Miasta -->
+            
             <Border Background="#f1c40f" 
                     CornerRadius="8" 
                     Padding="20">
@@ -138,7 +138,7 @@
                 </StackPanel>
             </Border>
 
-            <!-- Data podróży -->
+            
             <Border Background="#1abc9c" 
                     CornerRadius="8" 
                     Padding="20">
@@ -148,7 +148,7 @@
                 </StackPanel>
             </Border>
 
-            <!-- Przycisk podsumowania -->
+            
             <Button Content="Pokaż szczegóły podróży"
                     Click="OnShowDetails"
                     Background="#34495e"

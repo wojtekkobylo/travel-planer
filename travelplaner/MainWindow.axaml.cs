@@ -9,7 +9,7 @@ using TravelPlanner;
 
 namespace travelplaner
 {
-    public partial class MainWindow : Window
+    public partial class MainWindow : Window 
     {
         private List<string> cities = new();
 
