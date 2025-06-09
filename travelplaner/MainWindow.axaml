@@ -1,0 +1,164 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        x:Class="travelplaner.MainWindow"
+        Width="800" Height="900"
+        Title="Planer Podróży"
+        Background="#2c3e50">
+    
+    <Window.Styles>
+        <Style Selector="TextBox">
+            <Setter Property="Background" Value="White"/>
+            <Setter Property="Foreground" Value="Black"/>
+        </Style>
+        <Style Selector="ComboBox">
+            <Setter Property="Background" Value="White"/>
+            <Setter Property="Foreground" Value="Black"/>
+        </Style>
+        <Style Selector="ComboBoxItem">
+            <Setter Property="Foreground" Value="Black"/>
+        </Style>
+        <Style Selector="Calendar">
+            <Setter Property="Background" Value="White"/>
+            <Setter Property="Foreground" Value="Black"/>
+        </Style>
+        <Style Selector="CalendarButton">
+            <Setter Property="Background" Value="White"/>
+            <Setter Property="Foreground" Value="Black"/>
+        </Style>
+        <Style Selector="CalendarDayButton">
+            <Setter Property="Background" Value="White"/>
+            <Setter Property="Foreground" Value="Black"/>
+        </Style>
+        <Style Selector="Calendar /template/ Button">
+            <Setter Property="Background" Value="White"/>
+            <Setter Property="Foreground" Value="Black"/>
+        </Style>
+        <Style Selector="Calendar /template/ TextBlock">
+            <Setter Property="Foreground" Value="Black"/>
+        </Style>
+    </Window.Styles>
+
+
+    <ScrollViewer>
+        <StackPanel Margin="40" Spacing="20">
+            <TextBlock Text="Planer Podróży" 
+                     FontSize="32" 
+                     FontWeight="Bold" 
+                     HorizontalAlignment="Center"
+                     Foreground="White"
+                     Margin="0,0,0,20"/>
+
+            <!-- Dane osobowe -->
+            <Border Background="#3498db" 
+                    CornerRadius="8" 
+                    Padding="20">
+                <StackPanel Spacing="15">
+                    <TextBlock Text="Dane osobowe" FontWeight="Bold" FontSize="18" Foreground="White"/>
+                    <StackPanel Orientation="Horizontal" Spacing="10">
+                        <TextBlock Text="Imię i nazwisko:" Width="150" VerticalAlignment="Center" Foreground="White"/>
+                        <TextBox Name="NameBox" Width="300"/>
+                    </StackPanel>
+                </StackPanel>
+            </Border>
+
+            <!-- Wybór kraju -->
+            <Border Background="#2ecc71" 
+                    CornerRadius="8" 
+                    Padding="20">
+                <StackPanel Spacing="15">
+                    <TextBlock Text="Wybór kraju" FontWeight="Bold" FontSize="18" Foreground="White"/>
+                    <StackPanel Orientation="Horizontal" Spacing="10">
+                        <TextBlock Text="Wybierz kraj:" Width="150" VerticalAlignment="Center" Foreground="White"/>
+                        <ComboBox Name="CountryCombo" 
+                                  Width="200" 
+                                  SelectionChanged="OnCountryChanged"
+                                  Background="White"
+                                  Foreground="Black">
+                            <ComboBoxItem Content="Japonia"/>
+                            <ComboBoxItem Content="Włochy"/>
+                            <ComboBoxItem Content="Norwegia"/>
+                            <ComboBoxItem Content="USA"/>
+                            <ComboBoxItem Content="Francja"/>
+                        </ComboBox>
+
+                    </StackPanel>
+                    <Border Background="White" BorderBrush="Gray" BorderThickness="1" CornerRadius="4">
+                        <Image Name="CountryImage" Width="400" Height="200" Stretch="Uniform"/>
+                    </Border>
+                </StackPanel>
+            </Border>
+
+            <!-- Atrakcje -->
+            <Border Background="#e74c3c" 
+                    CornerRadius="8" 
+                    Padding="20">
+                <StackPanel Spacing="15">
+                    <TextBlock Text="Atrakcje turystyczne" FontWeight="Bold" FontSize="18" Foreground="White"/>
+                    <UniformGrid Columns="2" Rows="3">
+                        <CheckBox Name="MuseumCheck" Content="Muzea" Foreground="White"/>
+                        <CheckBox Name="ParksCheck" Content="Parki Narodowe" Foreground="White"/>
+                        <CheckBox Name="MonumentsCheck" Content="Zabytki" Foreground="White"/>
+                        <CheckBox Name="RestaurantsCheck" Content="Restauracje" Foreground="White"/>
+                        <CheckBox Name="GalleriesCheck" Content="Galerie sztuki" Foreground="White"/>
+                        <CheckBox Name="FestivalsCheck" Content="Festiwale i koncerty" Foreground="White"/>
+                    </UniformGrid>
+                </StackPanel>
+            </Border>
+
+            <!-- Transport -->
+            <Border Background="#9b59b6" 
+                    CornerRadius="8" 
+                    Padding="20">
+                <StackPanel Spacing="15">
+                    <TextBlock Text="Środek transportu" FontWeight="Bold" FontSize="18" Foreground="White"/>
+                    <UniformGrid Columns="4">
+                        <RadioButton Name="PlaneRadio" GroupName="transport" Content="Samolot" Foreground="White"/>
+                        <RadioButton Name="CarRadio" GroupName="transport" Content="Samochód" Foreground="White"/>
+                        <RadioButton Name="TrainRadio" GroupName="transport" Content="Pociąg" Foreground="White"/>
+                        <RadioButton Name="ShipRadio" GroupName="transport" Content="Statek" Foreground="White"/>
+                    </UniformGrid>
+                </StackPanel>
+            </Border>
+
+            <!-- Miasta -->
+            <Border Background="#f1c40f" 
+                    CornerRadius="8" 
+                    Padding="20">
+                <StackPanel Spacing="15">
+                    <TextBlock Text="Miasta do odwiedzenia" FontWeight="Bold" FontSize="18" Foreground="Black"/>
+                    <StackPanel Orientation="Horizontal" Spacing="10">
+                        <TextBox Name="CityBox" Width="300"/>
+                        <Button Content="Dodaj miasto" 
+                                Click="OnAddCity"
+                                Background="#e67e22"
+                                Foreground="White"
+                                Padding="15,8"/>
+                    </StackPanel>
+                    <ListBox Name="CityList" Height="100" Width="400"/>
+                </StackPanel>
+            </Border>
+
+            <!-- Data podróży -->
+            <Border Background="#1abc9c" 
+                    CornerRadius="8" 
+                    Padding="20">
+                <StackPanel Spacing="15">
+                    <TextBlock Text="Data podróży" FontWeight="Bold" FontSize="18" Foreground="White"/>
+                    <Calendar Name="TravelCalendar" Width="300" Background="White"/>
+                </StackPanel>
+            </Border>
+
+            <!-- Przycisk podsumowania -->
+            <Button Content="Pokaż szczegóły podróży"
+                    Click="OnShowDetails"
+                    Background="#34495e"
+                    Foreground="White"
+                    Padding="20,12"
+                    Width="300"
+                    HorizontalAlignment="Center"
+                    FontSize="16"
+                    CornerRadius="25"
+                    Margin="0,10,0,0"/>
+        </StackPanel>
+    </ScrollViewer>
+</Window>

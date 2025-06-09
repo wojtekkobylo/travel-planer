@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AvaloniaProject">
+    <option name="projectPerEditor">
+      <map>
+        <entry key="travelplaner/MainWindow.axaml" value="travelplaner/travelplaner.csproj" />
+        <entry key="travelplaner/SummaryWindow.axaml" value="travelplaner/travelplaner.csproj" />
+      </map>
+    </option>
+  </component>
+</project>
