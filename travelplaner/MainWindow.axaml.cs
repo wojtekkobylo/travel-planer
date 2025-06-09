@@ -25,7 +25,7 @@ namespace travelplaner
                 var country = item.Content?.ToString() ?? "";
                 try
                 {
-                    // Sprawdzamy różne możliwe ścieżki do zdjęć
+                    
                     var possiblePaths = new[]
                     {
                         $"Assets/Images/{country}.jpg",
@@ -43,7 +43,6 @@ namespace travelplaner
                 }
                 catch (Exception ex)
                 {
-                    // Można dodać jakieś logowanie błędu
                     Console.WriteLine($"Błąd wczytywania obrazu: {ex.Message}");
                 }
             }
